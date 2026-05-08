@@ -1,0 +1,27 @@
+<%- include('../partials/head', { title: item.title }) %>
+<%- include('../partials/header') %>
+<article class="detail-wrap">
+  <div class="detail-head-box">
+    <h1><%= item.title %></h1>
+    <% if (meta.field) { %>
+      <p class="info-row"><%= meta.key === 'actualites' ? '✍' : '👨‍💼' %> <%= meta.metaRoleLabel %><%= meta.key === 'actualites' ? ' ' : ' : ' %><strong><%= item[meta.field] %></strong></p>
+    <% } %>
+    <p class="meta-line">🕒 <%= formatDateTimeDisplay(item.publishedAt) %></p>
+    <p class="views-line">👀 <%= item.views || 0 %> visionnage(s)</p>
+  </div>
+  <% if (meta.type === 'image') { %>
+    <div class="detail-media-box detail-media-box-image">
+      <img src="<%= item.image || item.coverImage %>" alt="<%= item.title %>" class="zoomable-image detail-image" data-full="<%= item.image || item.coverImage %>">
+    </div>
+  <% } else { %>
+    <div class="detail-media-box video-box large-video"><iframe src="<%= item.youtubeEmbed %>" title="<%= item.title %>" allowfullscreen></iframe></div>
+  <% } %>
+</article>
+<div class="image-modal" id="imageModal" aria-hidden="true">
+  <div class="image-modal-backdrop" data-close-modal="true"></div>
+  <div class="image-modal-content">
+    <button class="image-modal-close" type="button" data-close-modal="true">×</button>
+    <img src="" alt="Agrandissement" id="imageModalImg">
+  </div>
+</div>
+<%- include('../partials/footer') %>

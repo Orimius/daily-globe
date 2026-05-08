@@ -1,0 +1,48 @@
+<%- include('../partials/head', { title: 'Dashboard administration' }) %>
+<%- include('../partials/header') %>
+<section class="admin-head">
+  <div>
+    <p class="eyebrow">Panneau d'administration</p>
+    <h1>Gestion des publications</h1>
+    <p class="muted">Créer, modifier, supprimer et suivre les visionnages de chaque contenu.</p>
+  </div>
+  <form action="/administration/logout" method="POST">
+    <button class="btn btn-secondary" type="submit">Se déconnecter</button>
+  </form>
+</section>
+<section class="admin-sections">
+  <% Object.entries(groups).forEach(([key, group]) => { %>
+    <section class="admin-block">
+      <div class="section-title-row">
+        <h2><%= group.meta.listLabel %></h2>
+        <a class="btn btn-primary" href="/administration/<%= key %>/new">Créer</a>
+      </div>
+      <% if (!group.items.length) { %>
+        <div class="empty-state">Aucun contenu dans cette rubrique.</div>
+      <% } else { %>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Titre</th><th>Date</th><th>Visionnages</th><th>Actions</th></tr></thead>
+            <tbody>
+              <% group.items.forEach(item => { %>
+                <tr>
+                  <td><strong><%= item.title %></strong></td>
+                  <td><%= new Date(item.publishedAt).toLocaleString('fr-FR') %></td>
+                  <td><%= item.views || 0 %></td>
+                  <td>
+                    <div class="action-row">
+                      <a class="btn btn-small btn-secondary" href="/administration/<%= key %>/<%= item.id %>/edit">Modifier</a>
+                      <a class="btn btn-small btn-danger" href="/administration/<%= key %>/<%= item.id %>/delete">Supprimer</a>
+                      <a class="btn btn-small btn-ghost" href="/<%= key %>/<%= item.slug %>" target="_blank">Voir</a>
+                    </div>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      <% } %>
+    </section>
+  <% }) %>
+</section>
+<%- include('../partials/footer') %>

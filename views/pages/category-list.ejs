@@ -1,0 +1,28 @@
+<%- include('../partials/head', { title: meta.listLabel }) %>
+<%- include('../partials/header') %>
+<section class="listing-head">
+  <h1><%= meta.listLabel %></h1>
+</section>
+<section class="card-grid cover-grid">
+  <% if (!items.length) { %><div class="empty-state">Aucun contenu publié pour le moment.</div><% } %>
+  <% items.forEach(item => { const coverSrc = item.coverImage || item.image; %>
+    <a class="cover-card" href="/<%= meta.key %>/<%= item.slug %>">
+      <div class="cover-card-media">
+        <% if (coverSrc) { %>
+          <img src="<%= coverSrc %>" alt="<%= item.title %>" data-full="<%= coverSrc %>">
+        <% } else { %>
+          <div class="cover-card-fallback">Daily Globe</div>
+        <% } %>
+      </div>
+
+      <div class="cover-card-info">
+        <h3><%= item.title %></h3>
+        <% if (meta.field) { %>
+          <p class="info-row"><%= meta.key === 'actualites' ? '✍' : '👨‍💼' %> <%= meta.metaRoleLabel %><%= meta.key === 'actualites' ? ' ' : ' : ' %><strong><%= item[meta.field] %></strong></p>
+        <% } %>
+        <p class="meta-line">🕒 <%= formatDateTimeDisplay(item.publishedAt) %></p>
+      </div>
+    </a>
+  <% }) %>
+</section>
+<%- include('../partials/footer') %>

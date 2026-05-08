@@ -1,0 +1,91 @@
+{
+  "site": {
+    "title": "Daily Globe",
+    "introTagline": "L'information au bout des doigts"
+  },
+  "content": {
+    "actualites": [
+      {
+        "id": "1776691551848-mffdpc",
+        "title": "DOUBLE MEURTRE À LS",
+        "slug": "double-meurtre-a-ls-mffdpc",
+        "publishedAt": "2026-04-20T13:25:51.848Z",
+        "createdAt": "2026-04-20T13:25:51.848Z",
+        "updatedAt": "2026-04-20T13:25:51.848Z",
+        "views": 3,
+        "redacteur": "Yamil Cortès",
+        "coverImage": "/uploads/actualites-1776691551848-mffdpc-cover.jpg",
+        "image": "/uploads/actualites-1776691551848-mffdpc-content.jpg"
+      },
+      {
+        "id": "1776691616804-ycdx1d",
+        "title": "ATTAQUE DU CONVOI DU LSPD",
+        "slug": "attaque-du-convoi-du-lspd-ycdx1d",
+        "publishedAt": "2026-04-20T13:26:56.804Z",
+        "createdAt": "2026-04-20T13:26:56.804Z",
+        "updatedAt": "2026-04-20T13:26:56.804Z",
+        "views": 4,
+        "redacteur": "Jayce Jensen",
+        "coverImage": "/uploads/actualites-1776691616804-ycdx1d-cover.jpg",
+        "image": "/uploads/actualites-1776691616804-ycdx1d-content.jpg"
+      }
+    ],
+    "evenements": [
+      {
+        "id": "1776796961699-9vnvwp",
+        "title": "dsjfnds",
+        "slug": "dsjfnds-9vnvwp",
+        "publishedAt": "2026-04-22T20:42:00.000Z",
+        "createdAt": "2026-04-21T18:42:41.699Z",
+        "updatedAt": "2026-04-21T18:42:41.699Z",
+        "views": 2,
+        "organisateur": "PPR",
+        "coverImage": "/uploads/evenements-1776796961699-9vnvwp-cover.jpg",
+        "image": "/uploads/evenements-1776796961699-9vnvwp-content.jpg"
+      }
+    ],
+    "magazines": [
+      {
+        "id": "1776796980408-1bquo5",
+        "title": "sdqdsq",
+        "slug": "sdqdsq-1bquo5",
+        "publishedAt": "2026-04-21T18:43:00.408Z",
+        "createdAt": "2026-04-21T18:43:00.408Z",
+        "updatedAt": "2026-04-21T18:43:00.408Z",
+        "views": 2,
+        "coverImage": "/uploads/magazines-1776796980408-1bquo5-cover.jpg",
+        "image": "/uploads/magazines-1776796980408-1bquo5-content.jpg"
+      }
+    ],
+    "emissions": [
+      {
+        "id": "1776796810730-5sekl1",
+        "title": "Test",
+        "slug": "test-5sekl1",
+        "publishedAt": "2026-04-21T18:40:10.730Z",
+        "createdAt": "2026-04-21T18:40:10.730Z",
+        "updatedAt": "2026-04-21T18:40:10.730Z",
+        "views": 3,
+        "organisateur": "Warren",
+        "coverImage": "/uploads/emissions-1776796810730-5sekl1-cover.jpg",
+        "youtubeUrl": "https://www.youtube.com/watch?v=kF6hv3WKTbc",
+        "youtubeEmbed": "https://www.youtube.com/embed/kF6hv3WKTbc"
+      }
+    ],
+    "interviews": [
+      {
+        "id": "1776796996791-nhuedj",
+        "title": "dsfdsfsdfsd",
+        "slug": "dsfdsfsdfsd-nhuedj",
+        "publishedAt": "2026-04-21T18:43:16.791Z",
+        "createdAt": "2026-04-21T18:43:16.791Z",
+        "updatedAt": "2026-04-21T18:43:16.791Z",
+        "views": 2,
+        "organisateur": "Vdsfs",
+        "coverImage": "/uploads/interviews-1776796996791-nhuedj-cover.jpg",
+        "youtubeUrl": "https://www.youtube.com/watch?v=VObZcJfKYIE&t=51s",
+        "youtubeEmbed": "https://www.youtube.com/embed/VObZcJfKYIE"
+      }
+    ]
+  }
+}

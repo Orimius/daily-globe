@@ -1,0 +1,58 @@
+<% if (showIntro) { %>
+<section class="intro" id="intro">
+  <div class="intro-content">
+    <div class="reveal logo-reveal">
+      <img src="/logo.png" class="logo-intro" alt="Daily Globe" />
+    </div>
+    <div class="reveal text-reveal">
+      <p class="tagline">Los Santos sous tous les angles</p>
+    </div>
+  </div>
+</section>
+
+<% } %>
+<header class="topbar">
+  <div class="topbar-inner">
+    <nav class="nav nav-left">
+      <a href="/actualites">Actualité</a>
+      <a href="/evenements">Événements</a>
+      <a href="/magazines">Magazines</a>
+    </nav>
+
+    <a href="/" class="logo-center-link" aria-label="Accueil">
+      <img src="/logo.png" alt="Daily Globe" class="logo-center" />
+    </a>
+
+    <nav class="nav nav-right">
+      <a href="/emissions">Émissions</a>
+      <a href="/interviews">Interviews</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<a href="/administration" class="admin-fab" aria-label="Administration">
+  <span class="admin-fab-icon">🔒</span>
+  <span>Administration</span>
+</a>
+
+<main class="page-shell">
+  <% if (flash) { %>
+    <div class="flash flash-<%= flash.type %>"><%= flash.message %></div>
+  <% } %>
+
+  <% if (confirm) { %>
+    <div class="confirm-overlay open" aria-hidden="false">
+      <div class="confirm-backdrop"></div>
+      <div class="confirm-box">
+        <h3><%= confirm.title %></h3>
+        <p><%= confirm.message %></p>
+        <div class="form-actions">
+          <a href="<%= confirm.cancelUrl %>" class="btn btn-secondary">Annuler</a>
+          <form action="<%= confirm.action %>" method="POST">
+            <button type="submit" class="btn <%= confirm.danger ? 'btn-danger' : 'btn-primary' %>"><%= confirm.confirmLabel %></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  <% } %>

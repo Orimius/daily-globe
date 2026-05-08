@@ -1,0 +1,52 @@
+<%- include('../partials/head', { title: item ? `Modifier ${meta.label}` : `Créer ${meta.label}` }) %>
+<%- include('../partials/header') %>
+<section class="editor-card">
+  <div class="section-title-row">
+    <div>
+      <p class="eyebrow">Administration</p>
+      <h1><%= item ? `Modifier ${meta.label.toLowerCase()}` : `Créer ${meta.label.toLowerCase()}` %></h1>
+    </div>
+    <a href="/administration/dashboard" class="btn btn-secondary">Retour</a>
+  </div>
+  <form action="<%= item ? `/administration/${meta.key}/${item.id}/update` : `/administration/${meta.key}` %>" method="POST" enctype="multipart/form-data" class="stack-form">
+    <label class="field"><span>Titre</span><input type="text" name="title" value="<%= values.title || '' %>" required></label>
+
+    <% if (meta.field === 'redacteur') { %>
+      <label class="field"><span>Rédacteur</span><input type="text" name="redacteur" value="<%= values.redacteur || '' %>" required></label>
+    <% } %>
+
+    <% if (meta.field === 'organisateur') { %>
+      <label class="field"><span><%= meta.key === 'emissions' || meta.key === 'interviews' ? 'Présentateur(trice)' : 'Organisateur(trice)' %></span><input type="text" name="organisateur" value="<%= values.organisateur || '' %>" required></label>
+    <% } %>
+
+    <% if (!meta.autoDate) { %>
+      <label class="field"><span>Date et heure</span><input type="datetime-local" name="publishedAt" value="<%= inputDateTime || '' %>" required></label>
+    <% } %>
+
+    <label class="field"><span>Cover</span><input type="file" name="coverImage" accept="image/*" <%= item ? '' : 'required' %>></label>
+    <% if (item && item.coverImage) { %>
+      <div class="preview-block">
+        <p class="muted">Cover actuelle</p>
+        <img src="<%= item.coverImage %>" alt="<%= item.title %>" class="admin-preview-image">
+      </div>
+    <% } %>
+
+    <% if (meta.type === 'image') { %>
+      <label class="field"><span>Image du contenu</span><input type="file" name="contentImage" accept="image/*" <%= item ? '' : 'required' %>></label>
+      <% if (item && item.image) { %>
+        <div class="preview-block">
+          <p class="muted">Image de contenu actuelle</p>
+          <img src="<%= item.image %>" alt="<%= item.title %>" class="admin-preview-image">
+        </div>
+      <% } %>
+    <% } %>
+
+    <% if (meta.type === 'youtube') { %>
+      <label class="field"><span>URL YouTube</span><input type="text" name="youtubeUrl" value="<%= values.youtubeUrl || '' %>" placeholder="https://www.youtube.com/watch?v=..." required></label>
+      <% if (youtubePreview) { %><div class="video-box"><iframe src="<%= youtubePreview %>" title="Prévisualisation vidéo" allowfullscreen></iframe></div><% } %>
+    <% } %>
+
+    <div class="form-actions"><button class="btn btn-primary" type="submit"><%= item ? 'Enregistrer les modifications' : 'Publier' %></button></div>
+  </form>
+</section>
+<%- include('../partials/footer') %>
