@@ -1,5 +1,4 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-@font-face { font-family: 'HeadingNow'; src: url('/fonts/headingnow.ttf') format('truetype'); font-weight: 900; font-style: normal; }
 :root { --bg: #e4dacb; --panel: #f5f1e8; --panel-2: #ede7da; --text: #2f5234; --text-soft: #5f6f58; --line: rgba(47,82,52,.16); --shadow: 0 14px 40px rgba(47,82,52,.08); --radius-xl: 24px; --radius-lg: 18px; }
 html, body { width: 100%; min-height: 100%; }
 body { background: var(--bg); color: var(--text); font-family: 'Montserrat', Arial, sans-serif; }
@@ -14,7 +13,7 @@ body.modal-open { overflow: hidden; }
 @keyframes revealIn { from { opacity:0; clip-path: polygon(0 0,0 0,0 100%,0 100%);} to { opacity:1; clip-path: polygon(0 0,100% 0,100% 100%,0 100%);} }
 @keyframes revealOut { from { opacity:1; clip-path: polygon(0 0,100% 0,100% 100%,0 100%);} to { opacity:0; clip-path: polygon(100% 0,100% 0,100% 100%,100% 100%);} }
 .logo-intro { width: 210px; display:block; }
-.tagline, .nav a, .hero h1, h1, h2, h3, .btn, .eyebrow, .admin-fab, .section-link, .field span { font-family:'HeadingNow', 'Montserrat', sans-serif; }
+.tagline, .nav a, .hero h1, h1, h2, h3, .btn, .eyebrow, .admin-fab, .section-link, .field span { font-family:'Oswald', 'Montserrat', sans-serif; }
 .tagline { font-size: clamp(1.2rem, 2vw, 1.65rem); color: var(--text); text-transform: uppercase; text-align:center; letter-spacing:.02em; }
 .topbar { z-index: 10 !important; position: sticky; top:0; z-index:20; opacity:0; transform:translateY(-10px); transition: opacity .55s ease, transform .55s ease; border-bottom:1px solid var(--line); background: rgba(228,218,203,.94); backdrop-filter: blur(10px); }
 .topbar.show { opacity:1; transform:translateY(0); }
@@ -117,7 +116,7 @@ input[type='text'], input[type='password'], input[type='datetime-local'], input[
 .cover-card:hover .cover-card-media img { transform: scale(1.04); }
 .cover-card-info { padding: 16px 18px 18px; background: linear-gradient(180deg, rgba(245,241,232,0.86), rgba(245,241,232,0.98)); border-top: 1px solid var(--line); }
 .cover-card-info h3 { margin-bottom: 8px; }
-.cover-card-fallback { width: 100%; height: 100%; display: grid; place-items: center; font-family: "HeadingNow", Arial, sans-serif; color: var(--text); font-size: 2rem; background: linear-gradient(180deg, rgba(237,231,218,1), rgba(228,218,203,1)); }
+.cover-card-fallback { width: 100%; height: 100%; display: grid; place-items: center; font-family: "Oswald", Arial, sans-serif; color: var(--text); font-size: 2rem; background: linear-gradient(180deg, rgba(237,231,218,1), rgba(228,218,203,1)); }
 .detail-media-box { width: min(900px, 100%); margin: 0 auto; }
 .detail-image {width: 100%; height: auto; aspect-ratio: 1350 / 1688; object-fit: cover !important; display: block; }
 .image-modal { z-index: 999999; }
